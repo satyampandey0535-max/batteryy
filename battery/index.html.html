@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Dhanashree ❤️</title>
+
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #fff0f5, #ffe4e1, #fffafc);
+  transition: filter 2s ease;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("bg.jpg.jpeg") center/cover no-repeat;
+  filter: blur(2px) brightness(75%);
+  z-index: -1;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* CENTERED PARAGRAPH */
+.message {
+  font-size: 17px;
+  max-width: 700px;
+  margin: 30px auto;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* GALLERY */
+.gallery img {
+  width: 240px;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.12);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* BUTTONS */
+button {
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.yesBtn { background: #ff4d6d; color: white; }
+.noBtn { background: #aaa; color: white; position: relative; }
+
+/* FLOATING HEARTS */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(-110vh); opacity: 0; }
+}
+
+/* FINAL SCREEN */
+#finalScreen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  background: radial-gradient(circle at center, #ffe4ec, #ffc6da, #ffb3d1);
+
+  color: #ff4d6d;
+  font-size: 42px;
+  font-weight: bold;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+
+  z-index: 999;
+}
+
+
+#finalScreen div {
+  text-shadow: 0 0 20px rgba(255,100,150,0.5);
+  animation: fadeIn 2s ease, glowPulse 3s infinite;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 10px rgba(255,100,150,0.4);
+  }
+  50% {
+    text-shadow: 0 0 35px rgba(255,100,150,0.9);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255,100,150,0.4);
+  }
+}
+
+.rose {
+  position: fixed;
+  top: -20px;
+  font-size: 24px;
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-20px); }
+  100% { transform: translateY(110vh); }
+}
+
+/* TYPING CURSOR */
+#typingTitle::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <h1 id="typingTitle"></h1>
+  <p>
+  From chats full of arguments to moments full of smiles… every part of us feels worth it, Jaanuu. ❤️
+  </p>
+</div>
+
+<div class="container">
+
+<p class="message">
+No matter what anyone says about you, no matter what you sometimes think about yourself, I love you with all my heart. I really mean it.  
+I’m crazy about you. I want to be with you all the time, I want to hold your hand all the time.  
+You could sit and come up with a list of ten things you hate about yourself, but I would reply with ten thousand things that I love about you.  
+That’s the kind of special treatment I want to give you. That’s the depth of the love in my heart.  
+Every moment I spend with you becomes my favorite memory. I love everything about you, especially your gusse wali naak 😊
+</p>
+
+<h2>Our Moments 📸</h2>
+
+<div class="gallery">
+  <img src="photo1.jpeg">
+  <img src="photo2.jpeg">
+  <img src="photo3.jpeg">
+</div>
+
+<h2>Will you be my Valentine? ❤️🌹</h2>
+
+<button class="yesBtn" onclick="showFinal()">Yes ❤️</button>
+<button class="noBtn" onmouseover="moveButton(this)">No 🙈</button>
+
+<audio id="bgMusic" src="music.mp3" loop></audio>
+
+</div>
+
+<div id="finalScreen">
+  <div>Happy First Valentine, Jaanuu ❤️</div>
+</div>
+
+<script>
+
+/* Typing effect */
+function typeTitle(text, elementId, speed = 80) {
+  let i = 0;
+  const element = document.getElementById(elementId);
+
+  function typing() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, speed);
+    }
+  }
+  typing();
+}
+
+window.onload = function() {
+  typeTitle("For Dhanashree ❤️", "typingTitle", 80);
+};
+
+/* Floating hearts */
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 500);
+
+/* Running No button */
+function moveButton(btn) {
+  btn.style.position = "absolute";
+  btn.style.left = Math.random() * window.innerWidth * 0.8 + "px";
+  btn.style.top = Math.random() * window.innerHeight * 0.6 + "px";
+}
+
+/* Start music + brighten page */
+document.body.addEventListener("click", function startMusic() {
+  const music = document.getElementById("bgMusic");
+  music.play();
+  document.body.style.filter = "brightness(1.15)";
+  document.body.removeEventListener("click", startMusic);
+});
+
+/* Final screen */
+function showFinal() {
+  const screen = document.getElementById("finalScreen");
+
+  // show final screen
+  screen.style.display = "flex";
+
+  // scroll to top so centering works
+  window.scrollTo({ top: 0, behavior: "instant" });
+
+  // falling roses
+  setInterval(() => {
+    let rose = document.createElement("div");
+    rose.className = "rose";
+    rose.innerHTML = "🌹";
+    rose.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(rose);
+    setTimeout(() => rose.remove(), 5000);
+  }, 300);
+}
+
+</script>
+
+</body>
+</html>
